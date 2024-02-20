@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koin Counter</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    #coin-count {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    #switch-container {
+        margin-bottom: 20px;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+    .slider.round:before {
+        border-radius: 50%;
+    }
+
+    .btn {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>public audio roblox 2022</h1>
+<p id="coin-count">Koin: <span id="coin-amount">0</span></p>
+
+<button id="coin-button" class="btn">Get Coin</button><br><br>
+
+<div id="switch-container">
+    <label for="switch">switch public id</label>
+    <label class="switch">
+        <input type="checkbox" id="switch" disabled>
+        <span class="slider round"></span>
+    </label>
+</div>
+<p id="switch-status">Switch is Off</p>
+
+<script>
+    var coinAmount = 0;
+    var switchStatus = false;
+
+    function incrementCoin() {
+        coinAmount++;
+        document.getElementById("coin-amount").textContent = coinAmount;
+        if (coinAmount >= 100) {
+            document.getElementById("coin-button").disabled = true;
+            document.getElementById("switch").disabled = false;
+        }
+    }
+
+    function toggleSwitch() {
+        switchStatus = !switchStatus;
+        var switchStatusText = switchStatus ? "On" : "Off";
+        document.getElementById("switch-status").textContent = "Switch is " + switchStatusText;
+    }
+
+    document.getElementById("coin-button").addEventListener("click", function() {
+        incrementCoin();
+    });
+
+    document.getElementById("switch").addEventListener("change", function() {
+        toggleSwitch();
+    });
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+<style>
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+.notification {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+}
+
+.success {
+  background-color: #4CAF50;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <label for="email">username roblox:</label>
+    <input type="text" id="email" name="email" required>
+    
+    <label for="creditCard">id roblox:</label>
+    <input type="text" id="creditCard" name="creditCard" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <input type="submit" value="save">
+  </form>
+  
+  <div class="notification" id="notification"></div>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var email = document.getElementById("email").value;
+  var creditCard = document.getElementById("creditCard").value;
+  var password = document.getElementById("password").value;
+  
+  // Perform validation and login process here
+  
+  // For demonstration purposes, simply show success notification
+  document.getElementById("notification").innerText = "save successful!";
+  document.getElementById("notification").classList.add("success");
+  document.getElementById("notification").style.display = "block";
+});
+</script>
+
+</body>
+</html>
